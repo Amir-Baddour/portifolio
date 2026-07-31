@@ -3,6 +3,15 @@ import { SITE } from "@/lib/site-data"
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#39;")
+}
+
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null)
 
@@ -25,15 +34,16 @@ export async function POST(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY
-  const emailFrom = process.env.EMAIL_FROM || "onboarding@resend.dev"
+  const emailFrom = process.env.EMAIL_FROM
 
-  if (!apiKey) {
+  if (!apiKey || !emailFrom) {
+    console.error("Contact form delivery misconfigured: missing RESEND_API_KEY or EMAIL_FROM")
     return NextResponse.json(
       {
         error:
-          "Email delivery is not configured yet. Add RESEND_API_KEY and EMAIL_FROM in your environment to enable delivery.",
+          "Email delivery is not configured for this deployment yet. Add RESEND_API_KEY and EMAIL_FROM in Vercel environment variables.",
       },
-      { status: 500 },
+      { status: 503 },
     )
   }
 
@@ -49,15 +59,17 @@ export async function POST(request: Request) {
       reply_to: email,
       subject: `Portfolio contact from ${name}`,
       html: `
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Name:</strong> ${escapeHtml(name.trim())}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email.trim())}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, "<br />")}</p>
+        <p>${escapeHtml(message.trim()).replace(/\n/g, "<br />")}</p>
       `,
     }),
   })
 
   if (!response.ok) {
+    const responseText = await response.text().catch(() => "")
+    console.error("Resend request failed:", response.status, responseText)
     return NextResponse.json({ error: "Failed to send email." }, { status: 500 })
   }
 
