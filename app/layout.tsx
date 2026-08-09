@@ -26,7 +26,6 @@ export const metadata: Metadata = {
     "Backend Developer",
     "Full-Stack Developer",
     "PHP",
-    "Laravel",
     "ASP.NET",
     "REST APIs",
     "Fintech",

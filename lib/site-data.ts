@@ -131,7 +131,7 @@ export const experiences: Experience[] = [
   {
     title: ".NET Developer",
     company: "Oqunet",
-    period: "Apr 2025 – Aug 2025",
+    period: "Apr 2025 – Jun 2025",
     bullets: [
       "Developed ASP.NET MVC controllers, validation logic, and reusable backend services for internal web applications.",
 
@@ -168,7 +168,6 @@ export const skillGroups: SkillGroup[] = [
     description: "Technologies I use most and know in depth.",
     skills: [
       "PHP",
-      "Laravel",
       "C#",
       "ASP.NET MVC",
       "ASP.NET Core",
@@ -186,8 +185,6 @@ export const skillGroups: SkillGroup[] = [
       "React",
       "JavaScript",
       "TypeScript",
-      "Node.js",
-      "Express.js",
       "Python",
       "MongoDB",
       "PostgreSQL",
@@ -205,6 +202,8 @@ export const skillGroups: SkillGroup[] = [
       "AWS IAM",
       "Docker",
       "CI/CD",
+      "Node.js",
+      "Express.js",
       "ML model evaluation",
     ],
   },
