@@ -7,7 +7,7 @@ export const SITE = {
   linkedin: "https://www.linkedin.com/in/amir-baddour",
   github: "https://github.com/Amir-Baddour",
   calendar: "https://calendar.app.google/tPZsGRuaDZC2Qnf19",
-  cv: "/Amir_Sami_Baddour_CV.pdf",
+  cv: "/Amir_Baddour_Backend_Engineer_CV.word",
   url: "https://amirbaddour.dev",
   subtitle:
     "I build secure web applications, REST APIs, fintech platforms, and machine-learning-enabled features using PHP, ASP.NET, JavaScript, Python, and relational databases.",
