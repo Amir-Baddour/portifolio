@@ -19,7 +19,7 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-10 lg:flex-row lg:gap-16">
         {/* Profile Image */}
-        <div className="shrink-0">
+        <div className="shrink-0 animate-in fade-in zoom-in-95 duration-700 fill-mode-both">
           <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-primary/30 shadow-lg shadow-primary/10 sm:h-56 sm:w-56 lg:h-64 lg:w-64">
             <Image
               src="/images/profile.png"
@@ -34,19 +34,19 @@ export function HeroSection() {
 
         {/* Text Content */}
         <div className="text-center lg:text-left">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl text-balance">
+          <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl text-balance animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 fill-mode-both">
             {SITE.fullName}
           </h1>
 
-          <p className="mb-6 text-lg font-medium text-primary sm:text-xl md:text-2xl">
+          <p className="mb-6 text-lg font-medium text-primary sm:text-xl md:text-2xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both">
             {SITE.role}
           </p>
 
-          <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0 text-pretty">
+          <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0 text-pretty animate-in fade-in slide-in-from-bottom-4 duration-700 delay-[450ms] fill-mode-both">
             {SITE.subtitle}
           </p>
 
-          <div className="mb-10 flex flex-col flex-wrap items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start">
+          <div className="mb-10 flex flex-col flex-wrap items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-[600ms] fill-mode-both">
             <a
               href="#projects"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all hover:opacity-90 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -71,7 +71,7 @@ export function HeroSection() {
             </a>
           </div>
 
-          <div className="flex items-center justify-center gap-2 lg:justify-start">
+          <div className="flex items-center justify-center gap-2 lg:justify-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-700 fill-mode-both">
             <SocialLink href={SITE.linkedin} label="LinkedIn profile" icon={Linkedin} />
             <SocialLink href={SITE.github} label="GitHub profile" icon={Github} />
             <SocialLink href={`mailto:${SITE.email}`} label="Send email" icon={Mail} />
