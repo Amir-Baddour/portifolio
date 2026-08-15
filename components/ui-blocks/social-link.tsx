@@ -13,9 +13,9 @@ export function SocialLink({ href, label, icon: Icon }: SocialLinkProps) {
       href={href}
       aria-label={label}
       {...(!isMail && { target: "_blank", rel: "noopener noreferrer" })}
-      className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-primary hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className="group inline-flex h-14 w-14 items-center justify-center rounded-lg text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-primary hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
-      <Icon className="h-5 w-5" />
+      <Icon className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" />
     </a>
   )
 }
