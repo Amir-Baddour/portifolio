@@ -17,7 +17,7 @@ const predefinedQuestions = [
   {
     question: "What certifications does Amir have?",
     answer:
-      "Amir holds certifications including: AI Fundamentals from IBM, Career Essentials in Generative AI from LinkedIn, ICDL from Microsoft, AWS re/Start Cloud Computing Program, and both Foundations of CS and Advanced Full-Stack Engineering from SE Factory.",
+      "Amir holds certifications including: AI Fundamentals from IBM, Career Essentials in Generative AI from LinkedIn, International Certification of Digital Literacy (ICDL) from Microsoft, AWS re/Start Cloud Computing Program, and both Foundations of CS and Advanced Full-Stack Engineering from SE Factory.",
   },
   {
     question: "How can I schedule a meeting?",

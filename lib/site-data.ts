@@ -235,7 +235,7 @@ export const certifications: Certification[] = [
       "https://www.linkedin.com/learning/certificates/a75876deed98c5529ef11036652f6895c5e16620e222e6f23bf131a1ab68c2b0?trk=share_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Be3Cns6CDQROVqsc5rylhMQ%3D%3D",
   },
   {
-    title: "International Computer Driving License (ICDL)",
+    title: "International Certification of Digital Literacy (ICDL)",
     issuer: "Microsoft",
     date: "Jan 2026",
     highlights: [],
