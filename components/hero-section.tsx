@@ -56,8 +56,7 @@ export function HeroSection() {
             </a>
             <a
               href={SITE.cv}
-              target="_blank"
-              rel="noopener noreferrer"
+              download="Amir_Sami_Baddour_CV.pdf"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-secondary px-6 py-3 text-sm font-medium text-foreground transition-all hover:bg-secondary/80 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               Download CV
