@@ -4,10 +4,13 @@ import type { Project } from "@/lib/site-data"
 import { LinkButton } from "./link-button"
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const isWalletProject = project.title === "Digital Wallet Platform"
+  const isWalletProject = index === 0
 
   return (
-    <article className="glass-card group overflow-hidden rounded-xl transition-all hover:border-primary/30">
+    <article
+      id={`case-${index + 1}`}
+      className="glass-card group overflow-hidden rounded-xl transition-all hover:border-primary/30"
+    >
       <div className={`grid gap-0 ${isWalletProject ? "lg:grid-cols-[7fr_5fr]" : "lg:grid-cols-2"}`}>
         {/* Screenshot */}
         <div className="border-b border-border bg-background lg:border-b-0 lg:border-r">
@@ -100,6 +103,31 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
               ))}
             </ul>
           </div>
+
+          {project.nextStep && (
+            <div className="mb-5 border-t border-border pt-4">
+              <h4 className="mb-1 text-sm font-semibold text-foreground">Next</h4>
+              <p className="text-sm leading-relaxed text-muted-foreground">{project.nextStep}</p>
+            </div>
+          )}
+          {project.review && (
+            <div className="mb-5 border-t border-border pt-4">
+              <h4 className="mb-1 text-sm font-semibold text-foreground">Review</h4>
+              <p className="text-sm leading-relaxed text-muted-foreground">{project.review}</p>
+            </div>
+          )}
+          {project.method && (
+            <div className="mb-5 border-t border-border pt-4">
+              <h4 className="mb-1 text-sm font-semibold text-foreground">Method</h4>
+              <p className="text-sm leading-relaxed text-muted-foreground">{project.method}</p>
+            </div>
+          )}
+          {project.takeaway && (
+            <div className="mb-5 border-t border-border pt-4">
+              <h4 className="mb-1 text-sm font-semibold text-foreground">What I took from it</h4>
+              <p className="text-sm leading-relaxed text-muted-foreground">{project.takeaway}</p>
+            </div>
+          )}
 
           {/* Features */}
           <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">

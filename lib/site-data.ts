@@ -26,6 +26,10 @@ export interface Project {
   solution: string
   contribution: string
   decisions: string[]
+  nextStep?: string
+  review?: string
+  method?: string
+  takeaway?: string
   features: string[]
   stack: string[]
   mlNote: string | null
@@ -36,8 +40,8 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Digital Wallet Platform",
-    subtitle: "Senior project · Digital payments",
+    title: "A wallet backend where the balance has to be right",
+    subtitle: "Senior project · MUBS",
     image: "/images/Picture2.jpg",
     imageAlt:
       "Digital wallet dashboard showing account balance, transfers, QR payments, and transaction history",
@@ -48,20 +52,23 @@ export const projects: Project[] = [
       "/images/Picture8.png",
     ],
     problem:
-      "Wallet users need a secure way to hold a balance, move money, make QR payments, and exchange cryptocurrency.",
+      "My senior project at MUBS. The platform lets people register, hold a balance, deposit, withdraw, send money to each other, and exchange cryptocurrency at current prices, while administrators verify accounts and monitor activity. I owned the server side.",
     solution:
-      "A digital wallet with a PHP REST API for authentication and money movement, a live-priced cryptocurrency exchange, and administration tools.",
+      "A PHP REST API covering authentication and deposits, withdrawals, and transfers, supported by MySQL data models, live exchange rates, and an admin dashboard.",
     contribution:
       "Built 35 PHP REST endpoints behind JWT authentication and Google sign-in, including deposits, withdrawals, transfers, and QR payments. Integrated live crypto prices through a Python Flask service with caching and retries.",
     decisions: [
       "Validate transaction requests and handle errors on the server.",
-      "Separate wallet, transaction, identity verification, and account data across 7 MySQL tables.",
-      "Use cached market-price data with retries for the exchange integration.",
+      "Keep transaction history in its own tables so balances can be checked against recorded activity.",
+      "Use an admin dashboard for account verification and analytics.",
     ],
+    nextStep:
+      "Containerize the API and database, then ship them to EC2 through a GitHub Actions pipeline to demonstrate the full delivery path.",
     features: [
       "Secure authentication",
       "Deposits, withdrawals, transfers, and QR payments",
       "Real-time cryptocurrency exchange",
+      "7 MySQL tables for wallet, transaction, account, and verification data",
       "Admin verification and analytics",
       "Feedback sentiment analysis",
     ],
@@ -73,12 +80,12 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
-    title: "School Management System",
+    title: "A school management system, built from the schema up",
     subtitle: ".NET Developer · Oqunet Software",
     image: "/images/project-backend-apps.png",
     imageAlt: "School management application interface with data tables and CRUD actions",
     problem:
-      "School staff needed a structured way to manage student and course records with reliable data handling.",
+      "The brief was a School Management System prototype: students, their courses, and the screens staff need to manage both. The work was built at Oqunet with senior developer review.",
     solution:
       "A School Management System prototype built with ASP.NET MVC and SQL Server, organized into controllers, models, and views.",
     contribution:
@@ -88,6 +95,8 @@ export const projects: Project[] = [
       "Use database foreign keys to enforce relationships between records.",
       "Separate controllers, models, and views so responsibilities stay clear.",
     ],
+    review:
+      "Debugged and refined the backend with senior developers through Git, then reworked data validation and query structure based on their feedback.",
     features: [
       "Student and course records",
       "Create, read, update, and delete",
@@ -101,7 +110,7 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
-    title: "Security and Systems Research",
+    title: "Security research: what happens between a phone and the network",
     subtitle: "Researcher · MUBS",
     image: "",
     imageAlt: "",
@@ -117,6 +126,10 @@ export const projects: Project[] = [
       "Document security implications alongside findings.",
       "Apply lessons about authentication, authorization, and validation to backend design.",
     ],
+    method:
+      "Each project ended in a written report covering methodology, findings, and security implications.",
+    takeaway:
+      "The research shaped how I build APIs: authentication, authorization, and input validation belong in the design from the start.",
     features: [
       "Network security research",
       "Arduino and IoT systems",
@@ -130,8 +143,8 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
-    title: "AirDropX",
-    subtitle: "Multi-tenant airdrop platform · CI/CD",
+    title: "AirDropX: multi-tenant airdrop platform with CI/CD",
+    subtitle: "Live platform · DigitalOcean",
     image: "",
     imageAlt: "",
     diagram: [
@@ -156,6 +169,7 @@ export const projects: Project[] = [
       "38 REST endpoints",
       "Google OAuth and email login",
       "15 PostgreSQL tables",
+      "Four GitHub Actions workflows",
       "Automated deploy and rollback",
     ],
     stack: [
@@ -296,40 +310,58 @@ export interface Capability {
 
 export const capabilities: Capability[] = [
   {
-    area: "Backend APIs",
+    area: "AWS EC2, Linux",
     evidence:
-      "Built REST APIs with authentication, server-side validation, transaction handling, and role-based access.",
-    where: "Digital Wallet, AirDropX, SimLine",
+      "Provisioned instances and managed users, permissions, and processes over SSH and the CLI.",
+    where: "Park Innovation",
   },
   {
-    area: "Database design",
+    area: "AWS S3, IAM, RDS",
     evidence:
-      "Designed relational schemas, including a 7-table MySQL wallet and a 15-table PostgreSQL platform.",
-    where: "Digital Wallet, AirDropX, Oqunet",
+      "Configured storage, access control, and managed databases end to end from the CLI.",
+    where: "Park Innovation",
   },
   {
-    area: "CI/CD and deployment",
+    area: "Docker, GitHub Actions",
     evidence:
-      "Automated pull-request checks and container delivery, with manual approvals, health checks, and rollback.",
-    where: "AirDropX, personal projects",
+      "Containerized deployments and automated build and delivery workflows.",
+    where: "Own projects",
   },
   {
-    area: "Application architecture",
+    area: "ASP.NET MVC, C#",
     evidence:
-      "Separated controllers, models, and views; implemented CRUD flows from Razor forms through ADO.NET and LINQ.",
-    where: "School Management System",
+      "Layered CRUD application on SQL Server with ADO.NET and LINQ.",
+    where: "Oqunet Software",
   },
   {
-    area: "Authentication and security",
+    area: "PHP, Node.js, Express",
     evidence:
-      "Implemented JWT and OAuth sign-in, role-based access, rate limiting, and server-side validation.",
-    where: "Digital Wallet, AirDropX",
+      "REST APIs with authentication and authorization, tested in Postman before release.",
+    where: "Wallet platform, own projects",
   },
   {
-    area: "Data and machine learning",
+    area: "SQL Server, MySQL, PostgreSQL",
     evidence:
-      "Applied Logistic Regression and Random Forest to classify user feedback and support product analytics.",
-    where: "Digital Wallet",
+      "Relational schema design, foreign keys, and query work across three engines.",
+    where: "Oqunet, wallet platform",
+  },
+  {
+    area: "Security",
+    evidence:
+      "Network interception research, IoT exposure analysis, and smart contracts in Solidity.",
+    where: "MUBS",
+  },
+  {
+    area: "Python, data",
+    evidence:
+      "Clustering and supervised models with Pandas and NumPy, evaluated with F1-score and cross-validation.",
+    where: "Own projects",
+  },
+  {
+    area: "Also",
+    evidence:
+      "Java, JavaScript, React, Razor, Tailwind CSS, Git, Microsoft Dynamics CRM.",
+    where: "",
   },
 ]
 
