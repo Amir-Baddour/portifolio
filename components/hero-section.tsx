@@ -17,7 +17,7 @@ export function HeroSection() {
       />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-16">
           <div>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.32em] text-primary/80">
               software engineer // backend + devops
@@ -45,7 +45,7 @@ export function HeroSection() {
               </a>
               <a
                 href={SITE.cv}
-                download="Amir_Sami_Baddour_CV.pdf"
+                download="Amir_Sami_Baddour_CV.docx"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-secondary px-6 py-3 text-sm font-medium text-foreground transition-all hover:bg-secondary/80 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 Download CV
@@ -66,12 +66,12 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative mx-auto aspect-square w-full max-w-[280px] overflow-hidden rounded-full border border-primary/30 shadow-xl shadow-primary/10">
+          <div className="relative mx-auto aspect-square w-full max-w-[360px] overflow-hidden rounded-full border border-primary/30 shadow-xl shadow-primary/10">
             <Image
               src="/images/profile.png"
               alt="Portrait of Amir Sami Baddour"
               fill
-              sizes="(max-width: 1024px) 70vw, 280px"
+              sizes="(max-width: 448px) 80vw, 360px"
               className="object-cover object-top"
               priority
             />

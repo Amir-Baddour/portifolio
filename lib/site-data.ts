@@ -7,7 +7,7 @@ export const SITE = {
   linkedin: "https://www.linkedin.com/in/amir-baddour",
   github: "https://github.com/Amir-Baddour",
   calendar: "https://calendar.app.google/tPZsGRuaDZC2Qnf19",
-  cv: "/Amir_Sami_Baddour_CV.pdf",
+  cv: "/Amir_Sami_Baddour_CV.docx",
   url: "https://amirbaddour.dev",
   subtitle:
     "I build backend APIs and data models, then take responsibility for the Linux servers, containers, and delivery pipelines that run them.",
