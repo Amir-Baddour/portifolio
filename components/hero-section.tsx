@@ -32,7 +32,7 @@ export function HeroSection() {
             </p>
 
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              I design <span className="font-semibold text-foreground">the API and the data model</span> behind it, then take responsibility for <span className="font-semibold text-foreground">Linux servers on AWS, containers, and the pipeline</span> in between.
+              I design <span className="font-semibold text-foreground">the API and the data model</span> behind it, then take responsibility for <span className="font-semibold text-foreground">containers, deployment pipelines, and the systems that keep them running</span>.
             </p>
 
             <div className="mt-10 flex flex-col flex-wrap items-stretch gap-3 sm:flex-row sm:items-center">
@@ -80,10 +80,10 @@ export function HeroSection() {
 
         <div className="mt-14 grid max-w-5xl gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {[
-            { value: "3 years", label: "of engineering and research" },
-            { value: "4", label: "AWS services operated hands-on" },
-            { value: "3", label: "backend stacks delivered" },
-            { value: "3", label: "research projects with reports" },
+            { value: "38", label: "REST endpoints in AirDropX" },
+            { value: "15", label: "PostgreSQL tables" },
+            { value: "4", label: "GitHub Actions delivery workflows" },
+            { value: "1-click", label: "rollback to an earlier release" },
           ].map((item) => (
             <div key={item.label} className="glass-card rounded-xl border border-border p-5">
               <div className="text-3xl font-semibold tracking-[-0.04em] text-foreground">{item.value}</div>

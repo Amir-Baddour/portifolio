@@ -44,7 +44,7 @@ export function AboutSection() {
               </div>
 
               <p className="leading-relaxed text-muted-foreground text-pretty">
-                I design <span className="font-semibold text-foreground">the API and data model</span> behind an application, then take ownership of where it runs: <span className="font-semibold text-foreground">Linux servers on AWS, containers, and the automation around them</span>. Before engineering full-time, I spent years in security research, which shaped how I think about authentication, validation, and systems design.
+                I design <span className="font-semibold text-foreground">the API and data model</span> behind an application, then take ownership of how it ships: <span className="font-semibold text-foreground">containers, automated checks, and reliable deployment pipelines</span>. My work spans backend systems, web applications, and machine-learning-enabled features.
               </p>
             </div>
           </div>
