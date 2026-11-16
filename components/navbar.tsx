@@ -5,12 +5,12 @@ import { useTheme } from "next-themes"
 import { Sun, Moon, Menu, X } from "lucide-react"
 
 const navLinks = [
+  { label: "Overview", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
-  { label: "ML", href: "#ml" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Certifications", href: "#certifications" },
+  { label: "Credentials", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ]
 
@@ -27,8 +27,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const totalHeight =
-        document.documentElement.scrollHeight - window.innerHeight
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
       const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0
       setScrollProgress(progress)
       setScrolled(window.scrollY > 20)
@@ -38,11 +37,7 @@ export function Navbar() {
   }, [])
 
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
-    }
+    document.body.style.overflow = mobileOpen ? "hidden" : ""
     return () => {
       document.body.style.overflow = ""
     }
@@ -60,27 +55,26 @@ export function Navbar() {
         aria-label="Page scroll progress"
       />
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-            ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm"
-            : "bg-transparent"
-          }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? "border-b border-border bg-background/80 backdrop-blur-xl" : "bg-transparent"
+        }`}
       >
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a
             href="#hero"
-            className="text-lg font-bold tracking-tight text-foreground hover:text-primary transition-colors"
+            className="text-lg font-semibold tracking-tight text-foreground transition-colors hover:text-primary"
           >
-            {"ASB"}
+            Amir Baddour
           </a>
 
-          {/* Desktop nav */}
-          <div className="hidden items-center gap-1 md:flex">
+          <div className="hidden items-center gap-2 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
+                <span className="h-2.5 w-2.5 rounded-full border border-border bg-transparent" />
                 {link.label}
               </a>
             ))}
@@ -93,33 +87,23 @@ export function Navbar() {
                 className="rounded-lg p-2 text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary"
                 aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
               >
-                {theme === "dark" ? (
-                  <Sun className="h-5 w-5" />
-                ) : (
-                  <Moon className="h-5 w-5" />
-                )}
+                {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </button>
             )}
 
-            {/* Mobile menu button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="rounded-lg p-2 text-muted-foreground transition-colors hover:text-foreground hover:bg-secondary md:hidden"
               aria-label="Toggle navigation menu"
             >
-              {mobileOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </nav>
 
-        {/* Mobile nav */}
         {mobileOpen && (
           <div className="border-t border-border bg-background/95 backdrop-blur-xl md:hidden">
-            <div className="flex flex-col px-6 py-4 gap-1">
+            <div className="flex flex-col gap-1 px-6 py-4">
               {navLinks.map((link) => (
                 <a
                   key={link.href}

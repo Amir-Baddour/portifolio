@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Amir Baddour",
   fullName: "Amir Sami Baddour",
-  role: "Backend-Focused Full-Stack Developer",
+  role: "Software Engineer, Backend and DevOps",
   email: "amirsbaddour@gmail.com",
   location: "Lebanon",
   linkedin: "https://www.linkedin.com/in/amir-baddour",
@@ -10,7 +10,7 @@ export const SITE = {
   cv: "/Amir_Sami_Baddour_CV.pdf",
   url: "https://amirbaddour.dev",
   subtitle:
-    "I build secure web applications, REST APIs, fintech platforms, and machine-learning-enabled features using PHP, ASP.NET, JavaScript, Python, and relational databases.",
+    "I design the API and the data model behind it, then take responsibility for the Linux servers, AWS infrastructure, and delivery pipeline that run it.",
   education: "Bachelor of Science in Computer Science — Graduated 2026",
   university: "Modern University for Business and Science (MUBS), Lebanon",
 } as const

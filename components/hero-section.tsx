@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react"
 import { SITE } from "@/lib/site-data"
 import { SocialLink } from "@/components/ui-blocks/social-link"
@@ -7,49 +6,37 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-24 pb-16"
+      className="relative flex min-h-screen items-center overflow-hidden px-6 pb-16 pt-28"
     >
-      {/* Animated teal glow */}
-      <div className="teal-glow absolute top-1/4 left-1/3 animate-pulse" aria-hidden="true" />
+      <div className="teal-glow absolute left-1/3 top-1/4 animate-pulse" aria-hidden="true" />
       <div
         className="teal-glow absolute bottom-1/4 right-1/4 animate-pulse"
         style={{ animationDelay: "1s" }}
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-10 lg:flex-row lg:gap-16">
-        {/* Profile Image */}
-        <div className="shrink-0 animate-in fade-in zoom-in-95 duration-700 fill-mode-both">
-          <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-primary/30 shadow-lg shadow-primary/10 sm:h-56 sm:w-56 lg:h-64 lg:w-64">
-            <Image
-              src="/images/profile.png"
-              alt="Portrait of Amir Sami Baddour"
-              fill
-              sizes="(max-width: 640px) 10rem, (max-width: 1024px) 14rem, 16rem"
-              className="object-cover object-top"
-              priority
-            />
-          </div>
-        </div>
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
+        <div className="max-w-4xl">
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.32em] text-primary/80">
+            software engineer // backend + devops
+          </p>
 
-        {/* Text Content */}
-        <div className="text-center lg:text-left">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl text-balance animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 fill-mode-both">
+          <h1 className="text-4xl font-semibold tracking-[-0.04em] text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
             {SITE.fullName}
           </h1>
 
-          <p className="mb-6 text-lg font-medium text-primary sm:text-xl md:text-2xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both">
-            {SITE.role}
+          <p className="mt-5 max-w-2xl text-xl font-medium text-primary sm:text-2xl">
+            Mid-senior software engineer working across backend systems and the infrastructure they run on.
           </p>
 
-          <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0 text-pretty animate-in fade-in slide-in-from-bottom-4 duration-700 delay-[450ms] fill-mode-both">
-            {SITE.subtitle}
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            I design <span className="font-semibold text-foreground">the API and the data model</span> behind it, then take responsibility for <span className="font-semibold text-foreground">Linux servers on AWS, containers, and the pipeline</span> in between.
           </p>
 
-          <div className="mb-10 flex flex-col flex-wrap items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-[600ms] fill-mode-both">
+          <div className="mt-10 flex flex-col flex-wrap items-stretch gap-3 sm:flex-row sm:items-center">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all hover:opacity-90 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all hover:scale-[1.02] hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               View Projects
               <ArrowDown className="h-4 w-4" />
@@ -70,11 +57,25 @@ export function HeroSection() {
             </a>
           </div>
 
-          <div className="flex items-center justify-center gap-2 lg:justify-start animate-in fade-in slide-in-from-bottom-4 duration-700 delay-700 fill-mode-both">
+          <div className="mt-8 flex items-center gap-2">
             <SocialLink href={SITE.linkedin} label="LinkedIn profile" icon={Linkedin} />
             <SocialLink href={SITE.github} label="GitHub profile" icon={Github} />
             <SocialLink href={`mailto:${SITE.email}`} label="Send email" icon={Mail} />
           </div>
+        </div>
+
+        <div className="mt-14 grid max-w-5xl gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {[
+            { value: "3 years", label: "of engineering and research" },
+            { value: "4", label: "AWS services operated hands-on" },
+            { value: "3", label: "backend stacks delivered" },
+            { value: "3", label: "research projects with reports" },
+          ].map((item) => (
+            <div key={item.label} className="glass-card rounded-xl border border-border p-5">
+              <div className="text-3xl font-semibold tracking-[-0.04em] text-foreground">{item.value}</div>
+              <div className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

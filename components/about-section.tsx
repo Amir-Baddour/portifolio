@@ -12,12 +12,12 @@ export function AboutSection() {
     <section id="about" ref={sectionRef} className="reveal px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="About Me"
-          title="Backend-focused engineering with an ML edge"
+          eyebrow="About me"
+          title="Backend systems, secure APIs, and the infrastructure behind them"
+          description="I work across application logic and operational infrastructure, with a strong interest in security, reliability, and clean data design."
         />
 
         <div className="grid gap-12 lg:grid-cols-5">
-          {/* Main content */}
           <div className="lg:col-span-3">
             <div className="glass-card rounded-xl p-6 md:p-8">
               <div className="mb-8 flex items-start gap-4">
@@ -38,33 +38,24 @@ export function AboutSection() {
                 <div>
                   <h3 className="font-semibold text-foreground">Achievement</h3>
                   <p className="text-sm text-muted-foreground">
-                    {"Participant \u2013 Lebanese Collegiate Programming Contest (LCPC 2024)"}
+                    Participant – Lebanese Collegiate Programming Contest (LCPC 2024)
                   </p>
                 </div>
               </div>
 
               <p className="leading-relaxed text-muted-foreground text-pretty">
-                I focus on backend engineering: designing relational database
-                schemas, building REST APIs, and implementing authentication,
-                validation, and transaction logic. I work across PHP, ASP.NET,
-                and JavaScript stacks, and I enjoy adding machine-learning-enabled
-                features, such as feedback sentiment classification, to real
-                applications. I care about writing clear, maintainable code and
-                shipping features that solve concrete problems.
+                I design <span className="font-semibold text-foreground">the API and data model</span> behind an application, then take ownership of where it runs: <span className="font-semibold text-foreground">Linux servers on AWS, containers, and the automation around them</span>. Before engineering full-time, I spent years in security research, which shaped how I think about authentication, validation, and systems design.
               </p>
             </div>
           </div>
 
-          {/* Quick info cards */}
           <div className="flex flex-col gap-4 lg:col-span-2">
             <div className="glass-card flex items-center gap-4 rounded-xl p-5">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                 <MapPin className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                  Location
-                </p>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground">Location</p>
                 <p className="font-medium text-foreground">{SITE.location}</p>
               </div>
             </div>
@@ -74,12 +65,8 @@ export function AboutSection() {
                 <Target className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                  Focus
-                </p>
-                <p className="font-medium text-foreground">
-                  Backend + Fintech + ML
-                </p>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground">Focus</p>
+                <p className="font-medium text-foreground">Backend + DevOps + Security</p>
               </div>
             </div>
 
@@ -88,9 +75,7 @@ export function AboutSection() {
                 <Mail className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                  Email
-                </p>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground">Email</p>
                 <a
                   href={`mailto:${SITE.email}`}
                   className="font-medium text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:underline"
