@@ -66,7 +66,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-2xl border border-primary/30 shadow-xl shadow-primary/10">
+          <div className="relative mx-auto aspect-square w-full max-w-[280px] overflow-hidden rounded-full border border-primary/30 shadow-xl shadow-primary/10">
             <Image
               src="/images/profile.png"
               alt="Portrait of Amir Sami Baddour"
