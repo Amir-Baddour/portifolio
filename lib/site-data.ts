@@ -123,14 +123,21 @@ export const projects: Project[] = [
   {
     title: "A school management system, built from the schema up",
     subtitle: ".NET Developer · Oqunet Software",
-    image: "/images/project-backend-apps.png",
-    imageAlt: "School management application interface with data tables and CRUD actions",
+    image: "/images/school-management-home.png",
+    imageAlt:
+      "School Management System home page with Create User and Display Users actions.",
     architectureImage: {
       src: "/images/school-management-architecture.png",
       alt: "Architecture diagram showing Razor views, controllers, and models flowing to SQL Server, where Student and Courses are related by a foreign key.",
       caption:
         "Requests move through the views, controllers, and models; SQL Server enforces the Student–Courses relationship with a foreign key.",
     },
+    imageGallery: [
+      "/images/school-management-create-student.png",
+      "/images/school-management-students-list.png",
+      "/images/school-management-edit-student.png",
+      "/images/school-management-change-password.png",
+    ],
     problem:
       "The brief was a School Management System prototype: students, their courses, and the screens staff need to manage both. The work was built at Oqunet with senior developer review.",
     solution:
@@ -165,6 +172,11 @@ export const projects: Project[] = [
       "Java 17 · Spark REST API",
       "15 PostgreSQL tables",
       "GHCR → SSH → Caddy",
+    ],
+    imageGallery: [
+      "/images/airdropx-sign-in.png",
+      "/images/airdropx-landing.png",
+      "/images/airdropx-how-it-works.png",
     ],
     problem:
       "Companies need a way to create airdrop campaigns and publish public claim pages from a single multi-tenant platform.",
