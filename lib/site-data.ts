@@ -20,10 +20,12 @@ export interface Project {
   subtitle: string
   image: string
   imageAlt: string
+  diagram?: string[]
   imageGallery?: string[]
   problem: string
   solution: string
   contribution: string
+  decisions: string[]
   features: string[]
   stack: string[]
   mlNote: string | null
@@ -51,6 +53,11 @@ export const projects: Project[] = [
       "A full-stack digital wallet platform supporting authentication, peer-to-peer transfers, QR payments, transaction history, notifications, analytics, and feedback sentiment classification.",
     contribution:
       "Designed the database structure, developed backend transaction logic, implemented authentication and validation, created REST API functionality, and integrated the frontend with the backend.",
+    decisions: [
+      "Validate transaction requests on the server before processing them.",
+      "Use relational data structures to keep account and transaction records organized.",
+      "Hash passwords instead of storing them as plain text.",
+    ],
     features: [
       "Secure authentication",
       "Password hashing",
@@ -80,6 +87,10 @@ export const projects: Project[] = [
       "An exploratory data analysis workflow that cleans, processes, and visualizes air quality data to surface pollution trends and environmental patterns.",
     contribution:
       "Cleaned and preprocessed the datasets, engineered features, ran statistical analysis, and built visualizations to communicate the findings.",
+    decisions: [
+      "Clean and prepare records before analyzing trends.",
+      "Use visualizations to make patterns and relationships easier to inspect.",
+    ],
     features: [
       "Data cleaning & preprocessing",
       "Feature exploration",
@@ -94,25 +105,87 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
-    title: "Backend Web Applications",
-    subtitle: "ASP.NET MVC",
+    title: "School Management System",
+    subtitle: ".NET Developer · Oqunet Software",
     image: "/images/project-backend-apps.png",
     imageAlt:
-      "ASP.NET MVC internal web application with a data table, CRUD actions, and an authentication form",
+      "School management application interface with data tables and CRUD actions",
     problem:
-      "Internal business processes required structured web applications with reliable data handling and access control.",
+      "School staff needed a structured way to manage student and course records with reliable data handling.",
     solution:
-      "Backend-driven ASP.NET MVC applications with authentication, validation, and a clean controller-service structure backed by SQL Server.",
+      "A School Management System prototype built with ASP.NET MVC and SQL Server, organized into controllers, models, and views.",
     contribution:
-      "Developed controllers, validation logic, reusable backend services, and SQL-backed CRUD functionality, and implemented role-based access.",
+      "Built student and course data features, implemented CRUD operations through ADO.NET and LINQ, and refined validation and queries with senior developer feedback.",
+    decisions: [
+      "Define the Student and Courses relational model before building the screens.",
+      "Use database foreign keys to enforce relationships between records.",
+      "Separate controllers, models, and views so responsibilities stay clear.",
+    ],
     features: [
-      "Authentication systems",
-      "Form and input validation",
-      "Controller-service structure",
-      "SQL-backed CRUD operations",
-      "Role-based access",
+      "Student and course records",
+      "Create, read, update, and delete",
+      "SQL Server relationships",
+      "Razor views and forms",
     ],
     stack: ["ASP.NET MVC", ".NET Framework", "C#", "SQL Server"],
+    mlNote: null,
+    githubUrl: "#",
+    liveUrl: "#",
+    caseStudyUrl: "#",
+  },
+  {
+    title: "AWS Operations",
+    subtitle: "Cloud computing · Park Innovation",
+    image: "",
+    imageAlt: "",
+    diagram: ["Operator", "EC2 · Linux", "IAM access", "S3 + RDS"],
+    problem:
+      "Production-style scenarios called for setting up Linux workloads and connecting compute, storage, access control, and databases.",
+    solution:
+      "Hands-on AWS operations practice across EC2, S3, IAM, and RDS, including server administration and end-to-end resource configuration.",
+    contribution:
+      "Provisioned Linux instances and configured resources through the AWS Console, SSH, and command line.",
+    decisions: [
+      "Use the CLI for repeatable setup that can be reviewed and rerun.",
+      "Manage user access and permissions through IAM.",
+      "Configure connected services with scalability and fault tolerance in mind.",
+    ],
+    features: [
+      "Linux EC2 instances",
+      "Users and permissions",
+      "S3 storage",
+      "RDS databases",
+    ],
+    stack: ["AWS EC2", "Linux", "IAM", "S3", "RDS", "AWS CLI"],
+    mlNote: null,
+    githubUrl: "#",
+    liveUrl: "#",
+    caseStudyUrl: "#",
+  },
+  {
+    title: "Security and Systems Research",
+    subtitle: "Researcher · MUBS",
+    image: "",
+    imageAlt: "",
+    diagram: ["Mobile device", "Controlled lab", "Network service"],
+    problem:
+      "The research explored how security assumptions affect connected systems, from mobile network traffic to IoT devices and blockchain applications.",
+    solution:
+      "Three university research projects covering a controlled network-interception demonstration, an Arduino-based connected-vehicle project, and a Solidity Web3 wallet.",
+    contribution:
+      "Investigated the systems, documented methodology and findings, and produced a written report for each project.",
+    decisions: [
+      "Run the network demonstration in a controlled lab environment.",
+      "Document methods and security implications alongside findings.",
+      "Apply lessons about authentication, authorization, and validation to backend design.",
+    ],
+    features: [
+      "Network security research",
+      "Arduino and IoT systems",
+      "Solidity and Web3",
+      "Three written reports",
+    ],
+    stack: ["Network security", "Arduino", "Solidity", "Web3"],
     mlNote: null,
     githubUrl: "#",
     liveUrl: "#",

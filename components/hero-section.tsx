@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react"
 import { SITE } from "@/lib/site-data"
 import { SocialLink } from "@/components/ui-blocks/social-link"
@@ -16,24 +17,25 @@ export function HeroSection() {
       />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <div className="max-w-4xl">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.32em] text-primary/80">
-            software engineer // backend + devops
-          </p>
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-16">
+          <div>
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.32em] text-primary/80">
+              software engineer // backend + devops
+            </p>
 
-          <h1 className="text-4xl font-semibold tracking-[-0.04em] text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-            {SITE.fullName}
-          </h1>
+            <h1 className="text-4xl font-semibold tracking-[-0.04em] text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+              {SITE.fullName}
+            </h1>
 
-          <p className="mt-5 max-w-2xl text-xl font-medium text-primary sm:text-2xl">
-            Mid-senior software engineer working across backend systems and the infrastructure they run on.
-          </p>
+            <p className="mt-5 max-w-2xl text-xl font-medium text-primary sm:text-2xl">
+              Building backend systems and the infrastructure they run on.
+            </p>
 
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            I design <span className="font-semibold text-foreground">the API and the data model</span> behind it, then take responsibility for <span className="font-semibold text-foreground">Linux servers on AWS, containers, and the pipeline</span> in between.
-          </p>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              I design <span className="font-semibold text-foreground">the API and the data model</span> behind it, then take responsibility for <span className="font-semibold text-foreground">Linux servers on AWS, containers, and the pipeline</span> in between.
+            </p>
 
-          <div className="mt-10 flex flex-col flex-wrap items-stretch gap-3 sm:flex-row sm:items-center">
+            <div className="mt-10 flex flex-col flex-wrap items-stretch gap-3 sm:flex-row sm:items-center">
             <a
               href="#projects"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all hover:scale-[1.02] hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -57,10 +59,22 @@ export function HeroSection() {
             </a>
           </div>
 
-          <div className="mt-8 flex items-center gap-2">
-            <SocialLink href={SITE.linkedin} label="LinkedIn profile" icon={Linkedin} />
-            <SocialLink href={SITE.github} label="GitHub profile" icon={Github} />
-            <SocialLink href={`mailto:${SITE.email}`} label="Send email" icon={Mail} />
+            <div className="mt-8 flex items-center gap-2">
+              <SocialLink href={SITE.linkedin} label="LinkedIn profile" icon={Linkedin} />
+              <SocialLink href={SITE.github} label="GitHub profile" icon={Github} />
+              <SocialLink href={`mailto:${SITE.email}`} label="Send email" icon={Mail} />
+            </div>
+          </div>
+
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-2xl border border-primary/30 shadow-xl shadow-primary/10">
+            <Image
+              src="/images/profile.png"
+              alt="Portrait of Amir Sami Baddour"
+              fill
+              sizes="(max-width: 1024px) 70vw, 280px"
+              className="object-cover object-top"
+              priority
+            />
           </div>
         </div>
 
