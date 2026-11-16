@@ -125,6 +125,12 @@ export const projects: Project[] = [
     subtitle: ".NET Developer · Oqunet Software",
     image: "/images/project-backend-apps.png",
     imageAlt: "School management application interface with data tables and CRUD actions",
+    architectureImage: {
+      src: "/images/school-management-architecture.png",
+      alt: "Architecture diagram showing Razor views, controllers, and models flowing to SQL Server, where Student and Courses are related by a foreign key.",
+      caption:
+        "Requests move through the views, controllers, and models; SQL Server enforces the Student–Courses relationship with a foreign key.",
+    },
     problem:
       "The brief was a School Management System prototype: students, their courses, and the screens staff need to manage both. The work was built at Oqunet with senior developer review.",
     solution:
