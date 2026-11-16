@@ -1,12 +1,8 @@
 "use client"
 
 import { useReveal } from "@/hooks/use-reveal"
-import { Star, CheckCircle2, Sparkles } from "lucide-react"
-import { skillGroups } from "@/lib/site-data"
+import { capabilities } from "@/lib/site-data"
 import { SectionHeading } from "@/components/ui-blocks/section-heading"
-import { SkillBadge } from "@/components/ui-blocks/skill-badge"
-
-const tierIcons = [Star, CheckCircle2, Sparkles]
 
 export function SkillsSection() {
   const sectionRef = useReveal()
@@ -15,34 +11,48 @@ export function SkillsSection() {
     <section id="skills" ref={sectionRef} className="reveal px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="Technical Skills"
-          title="Technologies I work with"
-          description="Grouped by proficiency so you know exactly where I am strongest."
+          eyebrow="Capabilities"
+          title="What I build and how I approach it"
+          description="A practical view of the systems I have worked on, the engineering behind them, and where I applied those skills."
         />
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {skillGroups.map((group, index) => {
-            const Icon = tierIcons[index] ?? Star
-            return (
-              <div
-                key={group.tier}
-                className="glass-card flex flex-col rounded-xl p-6 transition-all hover:border-primary/30"
-              >
-                <div className="mb-2 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                    <Icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">{group.tier}</h3>
-                </div>
-                <p className="mb-4 text-sm text-muted-foreground">{group.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) => (
-                    <SkillBadge key={skill} label={skill} />
-                  ))}
-                </div>
-              </div>
-            )
-          })}
+        <div className="glass-card overflow-hidden rounded-xl">
+          <table className="w-full border-collapse text-left">
+            <thead className="hidden border-b border-border text-sm text-muted-foreground md:table-header-group">
+              <tr>
+                <th scope="col" className="px-5 py-4 font-medium">Area</th>
+                <th scope="col" className="px-5 py-4 font-medium">What I have done</th>
+                <th scope="col" className="px-5 py-4 font-medium">Where</th>
+              </tr>
+            </thead>
+            <tbody>
+              {capabilities.map((capability) => (
+                <tr
+                  key={capability.area}
+                  className="block border-b border-border p-5 last:border-0 md:table-row md:p-0"
+                >
+                  <th
+                    scope="row"
+                    className="block pb-2 font-medium text-foreground md:table-cell md:px-5 md:py-5 md:align-top"
+                  >
+                    {capability.area}
+                  </th>
+                  <td className="block pb-3 text-sm leading-relaxed text-muted-foreground md:table-cell md:px-5 md:py-5 md:align-top">
+                    <span className="mr-2 font-mono text-[0.65rem] uppercase tracking-wider text-muted-foreground md:hidden">
+                      What I have done
+                    </span>
+                    {capability.evidence}
+                  </td>
+                  <td className="block font-mono text-xs leading-relaxed text-primary md:table-cell md:px-5 md:py-5 md:align-top md:text-muted-foreground">
+                    <span className="mr-2 font-sans text-[0.65rem] uppercase tracking-wider text-muted-foreground md:hidden">
+                      Where
+                    </span>
+                    {capability.where}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

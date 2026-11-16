@@ -73,58 +73,57 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
-    title: "Restaurant Management System",
-    subtitle: "C# console application",
-    image: "",
-    imageAlt:
-      "Flow of the restaurant management system between admin and customer roles",
-    diagram: ["Admin · menu and sales", "Doubly linked list", "Customer · orders and bill"],
+    title: "School Management System",
+    subtitle: ".NET Developer · Oqunet Software",
+    image: "/images/project-backend-apps.png",
+    imageAlt: "School management application interface with data tables and CRUD actions",
     problem:
-      "A restaurant needed a simple application for staff to manage a menu and sales while customers could build and update orders.",
+      "School staff needed a structured way to manage student and course records with reliable data handling.",
     solution:
-      "A C# console application with separate admin and customer roles, using a doubly linked list to hold menu and order items.",
+      "A School Management System prototype built with ASP.NET MVC and SQL Server, organized into controllers, models, and views.",
     contribution:
-      "Implemented menu and per-item sales management for admins, plus customer flows to browse the menu, place or change orders, and receive a final bill.",
+      "Built student and course features, implemented all four CRUD operations with ADO.NET and LINQ, and refined validation and queries through senior developer review.",
     decisions: [
-      "Represent menu and order items with a doubly linked list.",
-      "Separate admin management actions from customer ordering actions.",
+      "Define the Student and Courses relational model before building the screens.",
+      "Use database foreign keys to enforce relationships between records.",
+      "Separate controllers, models, and views so responsibilities stay clear.",
     ],
     features: [
-      "Two user roles",
-      "Menu management",
-      "Sales totals by item",
-      "Create and change orders",
+      "Student and course records",
+      "Create, read, update, and delete",
+      "SQL Server relationships",
+      "Razor views and forms",
     ],
-    stack: ["C#", "Data Structures", "Doubly Linked List"],
+    stack: ["ASP.NET MVC", "C#", "SQL Server", "ADO.NET", "LINQ"],
     mlNote: null,
     githubUrl: "#",
     liveUrl: "#",
     caseStudyUrl: "#",
   },
   {
-    title: "Deployment and CI/CD Practice",
-    subtitle: "Docker · GitHub Actions · Linux",
+    title: "Security and Systems Research",
+    subtitle: "Researcher · MUBS",
     image: "",
     imageAlt: "",
-    diagram: ["GitHub Actions", "Docker image", "Linux server via SSH"],
+    diagram: ["Controlled lab", "IoT vehicle", "Solidity wallet"],
     problem:
-      "Deploying changes manually makes it harder to repeat and verify the path from code to a running application.",
+      "The research explored how security assumptions affect mobile network traffic, connected devices, and decentralized systems.",
     solution:
-      "Containerized application deployments with Docker, automated workflows with GitHub Actions, and Linux server administration over SSH.",
+      "Three university research projects covering a controlled mobile-network demonstration, an Arduino vehicle connected over wireless, and a Web3 wallet in Solidity.",
     contribution:
-      "Practiced the delivery path from automated workflow to container and Linux host, including remote administration over SSH.",
+      "Investigated each system and documented the methodology, findings, and security implications in a written report.",
     decisions: [
-      "Package applications in Docker containers for consistent deployment.",
-      "Automate repeatable delivery steps with GitHub Actions.",
-      "Use SSH for Linux server administration.",
+      "Run the network demonstration in a controlled lab environment.",
+      "Document security implications alongside findings.",
+      "Apply lessons about authentication, authorization, and validation to backend design.",
     ],
     features: [
-      "Dockerized deployment",
-      "GitHub Actions workflows",
-      "Linux administration",
-      "SSH access",
+      "Network security research",
+      "Arduino and IoT systems",
+      "Solidity and Web3",
+      "Three written reports",
     ],
-    stack: ["Docker", "GitHub Actions", "CI/CD", "Linux", "SSH"],
+    stack: ["Network Security", "Arduino", "Solidity", "Web3"],
     mlNote: null,
     githubUrl: "#",
     liveUrl: "#",
@@ -286,6 +285,51 @@ export const skillGroups: SkillGroup[] = [
       "Express.js",
       "ML model evaluation",
     ],
+  },
+]
+
+export interface Capability {
+  area: string
+  evidence: string
+  where: string
+}
+
+export const capabilities: Capability[] = [
+  {
+    area: "Backend APIs",
+    evidence:
+      "Built REST APIs with authentication, server-side validation, transaction handling, and role-based access.",
+    where: "Digital Wallet, AirDropX, SimLine",
+  },
+  {
+    area: "Database design",
+    evidence:
+      "Designed relational schemas, including a 7-table MySQL wallet and a 15-table PostgreSQL platform.",
+    where: "Digital Wallet, AirDropX, Oqunet",
+  },
+  {
+    area: "CI/CD and deployment",
+    evidence:
+      "Automated pull-request checks and container delivery, with manual approvals, health checks, and rollback.",
+    where: "AirDropX, personal projects",
+  },
+  {
+    area: "Application architecture",
+    evidence:
+      "Separated controllers, models, and views; implemented CRUD flows from Razor forms through ADO.NET and LINQ.",
+    where: "School Management System",
+  },
+  {
+    area: "Authentication and security",
+    evidence:
+      "Implemented JWT and OAuth sign-in, role-based access, rate limiting, and server-side validation.",
+    where: "Digital Wallet, AirDropX",
+  },
+  {
+    area: "Data and machine learning",
+    evidence:
+      "Applied Logistic Regression and Random Forest to classify user feedback and support product analytics.",
+    where: "Digital Wallet",
   },
 ]
 
