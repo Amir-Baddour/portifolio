@@ -89,9 +89,9 @@ export const projects: Project[] = [
   {
     title: "Operating Linux workloads on AWS, command line first",
     subtitle: "Cloud computing · Park Innovation",
-    image: "",
-    imageAlt: "",
-    diagram: ["Operator", "EC2 · Linux", "IAM access", "S3 + RDS"],
+    image: "/images/aws-linux-operations.png",
+    imageAlt:
+      "Diagram showing an operator accessing Linux EC2 instances through the AWS console, SSH, and CLI, with IAM-governed access to RDS and S3.",
     problem:
       "Three months of hands-on infrastructure work focused on provisioning servers, controlling access, and connecting storage and databases in production-style scenarios.",
     solution:
