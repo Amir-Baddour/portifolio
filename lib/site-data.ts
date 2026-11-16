@@ -37,7 +37,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Digital Wallet Platform",
-    subtitle: "Senior Project",
+    subtitle: "Senior project · Digital payments",
     image: "/images/Picture2.jpg",
     imageAlt:
       "Digital wallet dashboard showing account balance, transfers, QR payments, and transaction history",
@@ -48,27 +48,24 @@ export const projects: Project[] = [
       "/images/Picture8.png",
     ],
     problem:
-      "Users need a secure and simple way to transfer money, manage transactions, and make digital payments.",
+      "Wallet users need a secure way to hold a balance, move money, make QR payments, and exchange cryptocurrency.",
     solution:
-      "A full-stack digital wallet platform supporting authentication, peer-to-peer transfers, QR payments, transaction history, notifications, analytics, and feedback sentiment classification.",
+      "A digital wallet with a PHP REST API for authentication and money movement, a live-priced cryptocurrency exchange, and administration tools.",
     contribution:
-      "Designed the database structure, developed backend transaction logic, implemented authentication and validation, created REST API functionality, and integrated the frontend with the backend.",
+      "Built 35 PHP REST endpoints behind JWT authentication and Google sign-in, including deposits, withdrawals, transfers, and QR payments. Integrated live crypto prices through a Python Flask service with caching and retries.",
     decisions: [
-      "Validate transaction requests on the server before processing them.",
-      "Use relational data structures to keep account and transaction records organized.",
-      "Hash passwords instead of storing them as plain text.",
+      "Validate transaction requests and handle errors on the server.",
+      "Separate wallet, transaction, identity verification, and account data across 7 MySQL tables.",
+      "Use cached market-price data with retries for the exchange integration.",
     ],
     features: [
       "Secure authentication",
-      "Password hashing",
-      "Transaction validation",
-      "Relational database design",
-      "QR-based payments",
-      "Notifications",
-      "Transaction history",
-      "Analytics dashboard",
+      "Deposits, withdrawals, transfers, and QR payments",
+      "Real-time cryptocurrency exchange",
+      "Admin verification and analytics",
+      "Feedback sentiment analysis",
     ],
-    stack: ["PHP", "MySQL", "JavaScript", "HTML", "CSS"],
+    stack: ["PHP", "MySQL", "REST APIs", "JWT", "Python Flask", "React"],
     mlNote:
       "Implemented Logistic Regression and Random Forest models to classify user feedback after deployment, enabling automated sentiment analysis and data-driven improvement insights.",
     githubUrl: "https://github.com/Amir-Baddour/senior-dweb3",
@@ -76,58 +73,58 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
-    title: "Air Quality Data Analysis",
-    subtitle: "Data Science Project",
-    image: "/images/project-air-quality.png",
+    title: "Restaurant Management System",
+    subtitle: "C# console application",
+    image: "",
     imageAlt:
-      "Air quality data analysis dashboard with pollution trend charts and a correlation heatmap",
+      "Flow of the restaurant management system between admin and customer roles",
+    diagram: ["Admin · menu and sales", "Doubly linked list", "Customer · orders and bill"],
     problem:
-      "Raw air quality datasets are noisy and hard to interpret, making pollution trends difficult to identify.",
+      "A restaurant needed a simple application for staff to manage a menu and sales while customers could build and update orders.",
     solution:
-      "An exploratory data analysis workflow that cleans, processes, and visualizes air quality data to surface pollution trends and environmental patterns.",
+      "A C# console application with separate admin and customer roles, using a doubly linked list to hold menu and order items.",
     contribution:
-      "Cleaned and preprocessed the datasets, engineered features, ran statistical analysis, and built visualizations to communicate the findings.",
+      "Implemented menu and per-item sales management for admins, plus customer flows to browse the menu, place or change orders, and receive a final bill.",
     decisions: [
-      "Clean and prepare records before analyzing trends.",
-      "Use visualizations to make patterns and relationships easier to inspect.",
+      "Represent menu and order items with a doubly linked list.",
+      "Separate admin management actions from customer ordering actions.",
     ],
     features: [
-      "Data cleaning & preprocessing",
-      "Feature exploration",
-      "Statistical summaries",
-      "Visualization dashboards",
-      "Pattern detection",
+      "Two user roles",
+      "Menu management",
+      "Sales totals by item",
+      "Create and change orders",
     ],
-    stack: ["Python", "NumPy", "Pandas", "Matplotlib", "Seaborn"],
+    stack: ["C#", "Data Structures", "Doubly Linked List"],
     mlNote: null,
     githubUrl: "#",
     liveUrl: "#",
     caseStudyUrl: "#",
   },
   {
-    title: "School Management System",
-    subtitle: ".NET Developer · Oqunet Software",
-    image: "/images/project-backend-apps.png",
-    imageAlt:
-      "School management application interface with data tables and CRUD actions",
+    title: "Deployment and CI/CD Practice",
+    subtitle: "Docker · GitHub Actions · Linux",
+    image: "",
+    imageAlt: "",
+    diagram: ["GitHub Actions", "Docker image", "Linux server via SSH"],
     problem:
-      "School staff needed a structured way to manage student and course records with reliable data handling.",
+      "Deploying changes manually makes it harder to repeat and verify the path from code to a running application.",
     solution:
-      "A School Management System prototype built with ASP.NET MVC and SQL Server, organized into controllers, models, and views.",
+      "Containerized application deployments with Docker, automated workflows with GitHub Actions, and Linux server administration over SSH.",
     contribution:
-      "Built student and course data features, implemented CRUD operations through ADO.NET and LINQ, and refined validation and queries with senior developer feedback.",
+      "Practiced the delivery path from automated workflow to container and Linux host, including remote administration over SSH.",
     decisions: [
-      "Define the Student and Courses relational model before building the screens.",
-      "Use database foreign keys to enforce relationships between records.",
-      "Separate controllers, models, and views so responsibilities stay clear.",
+      "Package applications in Docker containers for consistent deployment.",
+      "Automate repeatable delivery steps with GitHub Actions.",
+      "Use SSH for Linux server administration.",
     ],
     features: [
-      "Student and course records",
-      "Create, read, update, and delete",
-      "SQL Server relationships",
-      "Razor views and forms",
+      "Dockerized deployment",
+      "GitHub Actions workflows",
+      "Linux administration",
+      "SSH access",
     ],
-    stack: ["ASP.NET MVC", ".NET Framework", "C#", "SQL Server"],
+    stack: ["Docker", "GitHub Actions", "CI/CD", "Linux", "SSH"],
     mlNote: null,
     githubUrl: "#",
     liveUrl: "#",
@@ -185,22 +182,32 @@ export interface Experience {
   title: string
   company: string
   period: string
+  location?: string
   bullets: string[]
 }
 
 export const experiences: Experience[] = [
   {
-    title: ".NET Developer",
-    company: "Oqunet",
-    period: "Apr 2025 – Jun 2025",
+    title: "Cloud Computing (AWS Services)",
+    company: "Park Innovation",
+    period: "Jun 2025 – Aug 2025",
+    location: "Samqaniyeh, Mount Lebanon Governorate, Lebanon · Hybrid",
     bullets: [
-      "Developed ASP.NET MVC controllers, validation logic, and reusable backend services for internal web applications.",
-
-      "Implemented backend business logic, form validation, database operations, error handling, and role-based functionality.",
-      "Built SQL Server-backed CRUD functionality and data-access operations for core application features.",
-      "Used ADO.NET to connect the app to SQL Server and manage data operations.",
-      "Debugged and tested backend features alongside senior developers.",
-      "Structured the app using MVC architecture (controllers, models, views).",
+      "Provisioned Linux EC2 instances and administered users, permissions, and processes through the AWS Console, SSH, and CLI.",
+      "Configured EC2, S3, IAM, and RDS end to end from the CLI.",
+      "Worked through guided labs and simulated production scenarios with scalability, fault tolerance, and security in mind.",
+    ],
+  },
+  {
+    title: ".NET Developer (ASP.NET MVC)",
+    company: "Oqunet Software",
+    period: "Apr 2025 – Jun 2025",
+    location: "Zouk Mosbeh, Keserwan-Jbeil Governorate, Lebanon · Hybrid",
+    bullets: [
+      "Built a School Management System prototype in three months, with reviews from senior developers.",
+      "Designed Student and Courses schemas in SQL Server and linked them with foreign keys.",
+      "Implemented all four CRUD operations from Razor forms to database tables using ADO.NET and LINQ.",
+      "Kept controllers, models, and views separate, and refined validation and queries through Git-based code review.",
     ],
   },
   {
@@ -213,6 +220,18 @@ export const experiences: Experience[] = [
       "Integrated frontend interfaces with backend APIs, handling request validation, JSON responses, and error handling.",
       "Cleaned and prepared datasets for website import and ensured data could be consumed reliably by the app.",
       "Created QR code functionality that allowed users to view the menu by scanning the code.",
+    ],
+  },
+  {
+    title: "Researcher",
+    company: "Modern University for Business and Science",
+    period: "Oct 2022 – Jul 2025",
+    location: "Aley, Mount Lebanon Governorate, Lebanon · On-site",
+    bullets: [
+      "Completed three security and systems research projects over two years and ten months, each documented in a written report.",
+      "Ran a controlled lab demonstration examining mobile password interception in transit.",
+      "Built an Arduino vehicle connected over wireless and studied its exposure as an IoT device.",
+      "Wrote a Web3 wallet in Solidity to explore decentralized authentication and trust.",
     ],
   },
 ]

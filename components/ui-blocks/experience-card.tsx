@@ -16,6 +16,9 @@ export function ExperienceCard({ experience }: { experience: Experience }) {
             <div>
               <h3 className="font-semibold text-foreground">{experience.title}</h3>
               <p className="text-sm text-primary">{experience.company}</p>
+              {experience.location && (
+                <p className="mt-1 text-xs text-muted-foreground">{experience.location}</p>
+              )}
             </div>
           </div>
           <span className="text-sm text-muted-foreground">{experience.period}</span>
