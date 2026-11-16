@@ -44,6 +44,23 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
               </div>
             )}
 
+            {project.architectureImage && (
+              <figure className="mt-4">
+                <div className="relative aspect-[2.35/1] overflow-hidden rounded-xl border border-border bg-background">
+                  <Image
+                    src={project.architectureImage.src}
+                    alt={project.architectureImage.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-contain"
+                  />
+                </div>
+                <figcaption className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  {project.architectureImage.caption}
+                </figcaption>
+              </figure>
+            )}
+
             {project.imageGallery?.length ? (
               <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
                 {project.imageGallery.map((image) => (

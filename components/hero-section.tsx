@@ -87,7 +87,7 @@ export function HeroSection() {
           >
             <title id="pipeline-title">Portfolio overview as a delivery pipeline</title>
             <desc id="pipeline-description">
-              Four case studies branch from the overview, then rejoin before experience,
+            Four case studies branch from the overview, then rejoin before experience,
               capabilities, credentials, and contact.
             </desc>
             <text x="20" y="14" fill="var(--muted-foreground)" fontSize="11" fontFamily="monospace">
@@ -128,16 +128,16 @@ export function HeroSection() {
                   Wallet backend
                 </text>
               </a>
-              <a href="#case-2" aria-label="Go to School Management case study">
+              <a href="#case-2" aria-label="Go to AWS operations case study">
                 <rect x="236" y="84" width="180" height="34" rx="17" />
                 <text x="326" y="106" textAnchor="middle" fill="var(--foreground)" stroke="none" fontSize="13">
-                  School system
+                  AWS operations
                 </text>
               </a>
-              <a href="#case-3" aria-label="Go to Security Research case study">
+              <a href="#case-3" aria-label="Go to School Management case study">
                 <rect x="236" y="138" width="180" height="34" rx="17" />
                 <text x="326" y="160" textAnchor="middle" fill="var(--foreground)" stroke="none" fontSize="13">
-                  Security research
+                  School system
                 </text>
               </a>
               <a href="#case-4" aria-label="Go to AirDropX case study">
@@ -178,7 +178,7 @@ export function HeroSection() {
         </div>
 
         <div className="mt-8 grid grid-cols-2 gap-3 lg:hidden">
-          {["Digital Wallet", "School Management", "Security Research", "AirDropX"].map(
+          {["Digital Wallet", "AWS Operations", "School Management", "AirDropX"].map(
             (label, index) => (
               <a
                 key={label}

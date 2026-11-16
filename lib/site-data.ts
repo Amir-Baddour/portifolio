@@ -20,6 +20,11 @@ export interface Project {
   subtitle: string
   image: string
   imageAlt: string
+  architectureImage?: {
+    src: string
+    alt: string
+    caption: string
+  }
   diagram?: string[]
   imageGallery?: string[]
   problem: string
@@ -45,6 +50,12 @@ export const projects: Project[] = [
     image: "/images/Picture2.jpg",
     imageAlt:
       "Digital wallet dashboard showing account balance, transfers, QR payments, and transaction history",
+    architectureImage: {
+      src: "/images/wallet-architecture.png",
+      alt: "Architecture diagram showing React and admin clients calling a PHP REST API connected to MySQL, a live price feed, and a machine-learning module.",
+      caption:
+        "The backend validates transactions before storing them and connects the clients to account data, live prices, and feedback analysis.",
+    },
     imageGallery: [
       "/images/Picture3.png",
       "/images/Picture4.png",
@@ -80,6 +91,35 @@ export const projects: Project[] = [
     caseStudyUrl: "#",
   },
   {
+    title: "Operating Linux workloads on AWS, command line first",
+    subtitle: "Cloud computing · Park Innovation",
+    image: "",
+    imageAlt: "",
+    diagram: ["Operator", "EC2 · Linux", "IAM access", "S3 + RDS"],
+    problem:
+      "Three months of hands-on infrastructure work focused on provisioning servers, controlling access, and connecting storage and databases in production-style scenarios.",
+    solution:
+      "Guided labs and simulated production scenarios across EC2, S3, IAM, and RDS, with Linux server administration through the Console, SSH, and CLI.",
+    contribution:
+      "Provisioned Linux instances, managed users, permissions, and processes, and configured all four AWS services end to end from the CLI.",
+    decisions: [
+      "Configure from the CLI so commands can be saved, reviewed, and rerun.",
+      "Use IAM to manage users and permissions.",
+      "Set up environments with scalability, fault tolerance, and security in mind.",
+    ],
+    features: [
+      "Linux EC2 instances",
+      "Console, SSH, and CLI access",
+      "IAM access control",
+      "S3 storage and RDS databases",
+    ],
+    stack: ["AWS EC2", "Linux", "SSH", "AWS CLI", "S3", "IAM", "RDS"],
+    mlNote: null,
+    githubUrl: "#",
+    liveUrl: "#",
+    caseStudyUrl: "#",
+  },
+  {
     title: "A school management system, built from the schema up",
     subtitle: ".NET Developer · Oqunet Software",
     image: "/images/project-backend-apps.png",
@@ -104,39 +144,6 @@ export const projects: Project[] = [
       "Razor views and forms",
     ],
     stack: ["ASP.NET MVC", "C#", "SQL Server", "ADO.NET", "LINQ"],
-    mlNote: null,
-    githubUrl: "#",
-    liveUrl: "#",
-    caseStudyUrl: "#",
-  },
-  {
-    title: "Security research: what happens between a phone and the network",
-    subtitle: "Researcher · MUBS",
-    image: "",
-    imageAlt: "",
-    diagram: ["Controlled lab", "IoT vehicle", "Solidity wallet"],
-    problem:
-      "The research explored how security assumptions affect mobile network traffic, connected devices, and decentralized systems.",
-    solution:
-      "Three university research projects covering a controlled mobile-network demonstration, an Arduino vehicle connected over wireless, and a Web3 wallet in Solidity.",
-    contribution:
-      "Investigated each system and documented the methodology, findings, and security implications in a written report.",
-    decisions: [
-      "Run the network demonstration in a controlled lab environment.",
-      "Document security implications alongside findings.",
-      "Apply lessons about authentication, authorization, and validation to backend design.",
-    ],
-    method:
-      "Each project ended in a written report covering methodology, findings, and security implications.",
-    takeaway:
-      "The research shaped how I build APIs: authentication, authorization, and input validation belong in the design from the start.",
-    features: [
-      "Network security research",
-      "Arduino and IoT systems",
-      "Solidity and Web3",
-      "Three written reports",
-    ],
-    stack: ["Network Security", "Arduino", "Solidity", "Web3"],
     mlNote: null,
     githubUrl: "#",
     liveUrl: "#",
