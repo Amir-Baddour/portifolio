@@ -7,12 +7,7 @@ const predefinedQuestions = [
   {
     question: "What is the Digital Wallet Platform?",
     answer:
-      "The Digital Wallet Platform is Amir's senior project \u2014 a full-stack digital wallet supporting authentication, peer-to-peer transfers, QR payments, transaction history, notifications, an analytics dashboard, and feedback sentiment classification. Amir designed the database, built the backend transaction logic, and created the REST API.",
-  },
-  {
-    question: "How was ML integrated?",
-    answer:
-      "Amir implemented Logistic Regression and Random Forest models in the Digital Wallet Platform to classify user feedback after deployment. This enabled automated sentiment analysis and provided data-driven insights for continuous improvement of the platform.",
+      "The Digital Wallet Platform is Amir's senior project \u2014 a full-stack digital wallet supporting authentication, peer-to-peer transfers, QR payments, transaction history, notifications, and an analytics dashboard. Amir designed the database, built the backend transaction logic, and created the REST API.",
   },
   {
     question: "What certifications does Amir have?",

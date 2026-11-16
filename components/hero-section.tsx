@@ -28,11 +28,11 @@ export function HeroSection() {
             </h1>
 
             <p className="mt-5 max-w-2xl text-xl font-medium text-primary sm:text-2xl">
-              Building backend systems and the infrastructure they run on.
+              Mid-senior software engineer working across backend systems and the infrastructure they run on.
             </p>
 
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              I design <span className="font-semibold text-foreground">the API and the data model</span> behind it, then take responsibility for <span className="font-semibold text-foreground">containers, deployment pipelines, and the systems that keep them running</span>.
+              I design <strong className="font-semibold text-foreground">the API and the data model</strong> behind it, then take responsibility for where it runs: <strong className="font-semibold text-foreground">Linux servers on AWS, containers, and the pipeline</strong> in between. Before that I spent nearly three years in <strong className="font-semibold text-foreground">security research</strong>. In a university lab I ran a controlled man-in-the-middle demonstration and showed <strong className="font-semibold text-foreground">how a phone&apos;s password can be intercepted in transit</strong>. I have built backends with that in mind since.
             </p>
 
             <div className="mt-10 flex flex-col flex-wrap items-stretch gap-3 sm:flex-row sm:items-center">

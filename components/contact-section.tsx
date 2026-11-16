@@ -90,7 +90,7 @@ export function ContactSection() {
         <SectionHeading
           eyebrow="Contact"
           title="Let's connect"
-          description="Open to backend engineering, fintech, and ML-focused roles and collaborations. Send a message or book a quick call."
+          description="Open to backend engineering, fintech, and infrastructure roles and collaborations. Send a message or book a quick call."
         />
 
         <div className="grid gap-12 lg:grid-cols-5">

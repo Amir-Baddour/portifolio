@@ -174,18 +174,6 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             ))}
           </div>
 
-          {/* ML note */}
-          {project.mlNote && (
-            <div className="mb-5 rounded-lg border border-primary/10 bg-primary/5 p-4">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary">
-                ML Integration
-              </p>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {project.mlNote}
-              </p>
-            </div>
-          )}
-
           {/* Actions */}
           <div className="flex flex-wrap gap-3">
             <LinkButton

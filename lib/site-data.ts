@@ -37,7 +37,6 @@ export interface Project {
   takeaway?: string
   features: string[]
   stack: string[]
-  mlNote: string | null
   githubUrl: string
   liveUrl: string
   caseStudyUrl: string
@@ -52,9 +51,9 @@ export const projects: Project[] = [
       "Digital wallet dashboard showing account balance, transfers, QR payments, and transaction history",
     architectureImage: {
       src: "/images/wallet-architecture.png",
-      alt: "Architecture diagram showing React and admin clients calling a PHP REST API connected to MySQL, a live price feed, and a machine-learning module.",
+      alt: "Architecture diagram showing React and admin clients calling a PHP REST API connected to MySQL and a live price feed.",
       caption:
-        "The backend validates transactions before storing them and connects the clients to account data, live prices, and feedback analysis.",
+        "The backend validates transactions before storing them and connects the clients to account data and live prices.",
     },
     imageGallery: [
       "/images/Picture3.png",
@@ -81,11 +80,8 @@ export const projects: Project[] = [
       "Real-time cryptocurrency exchange",
       "7 MySQL tables for wallet, transaction, account, and verification data",
       "Admin verification and analytics",
-      "Feedback sentiment analysis",
     ],
     stack: ["PHP", "MySQL", "REST APIs", "JWT", "Python Flask", "React"],
-    mlNote:
-      "Implemented Logistic Regression and Random Forest models to classify user feedback after deployment, enabling automated sentiment analysis and data-driven improvement insights.",
     githubUrl: "https://github.com/Amir-Baddour/senior-dweb3",
     liveUrl: "#",
     caseStudyUrl: "#",
@@ -114,7 +110,6 @@ export const projects: Project[] = [
       "S3 storage and RDS databases",
     ],
     stack: ["AWS EC2", "Linux", "SSH", "AWS CLI", "S3", "IAM", "RDS"],
-    mlNote: null,
     githubUrl: "#",
     liveUrl: "#",
     caseStudyUrl: "#",
@@ -144,7 +139,6 @@ export const projects: Project[] = [
       "Razor views and forms",
     ],
     stack: ["ASP.NET MVC", "C#", "SQL Server", "ADO.NET", "LINQ"],
-    mlNote: null,
     githubUrl: "#",
     liveUrl: "#",
     caseStudyUrl: "#",
@@ -191,7 +185,6 @@ export const projects: Project[] = [
       "DigitalOcean",
       "Caddy",
     ],
-    mlNote: null,
     githubUrl: "https://github.com/Amir-Baddour/AirDropX",
     liveUrl: "#",
     caseStudyUrl: "#",
@@ -288,8 +281,6 @@ export const skillGroups: SkillGroup[] = [
       "Python",
       "MongoDB",
       "PostgreSQL",
-      "Scikit-learn",
-      "Pandas",
     ],
   },
   {
@@ -304,7 +295,6 @@ export const skillGroups: SkillGroup[] = [
       "CI/CD",
       "Node.js",
       "Express.js",
-      "ML model evaluation",
     ],
   },
 ]
@@ -357,12 +347,6 @@ export const capabilities: Capability[] = [
     evidence:
       "Network interception research, IoT exposure analysis, and smart contracts in Solidity.",
     where: "MUBS",
-  },
-  {
-    area: "Python, data",
-    evidence:
-      "Clustering and supervised models with Pandas and NumPy, evaluated with F1-score and cross-validation.",
-    where: "Own projects",
   },
   {
     area: "Also",
